@@ -1,0 +1,352 @@
+.auth-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.auth-header {
+  margin-bottom: 25px;
+}
+
+.auth-header h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.auth-header p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+  transform: translateY(-1px);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+
+.form-group input:invalid {
+  border-color: #f44336;
+}
+
+.form-group input:valid {
+  border-color: #4caf50;
+}
+
+.form-group input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.form-group input:focus::placeholder {
+  color: #bbb;
+}
+
+.auth-container button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.auth-container button:hover::before {
+  left: 100%;
+}
+
+.auth-container button:hover:not(:disabled) {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+}
+
+.auth-container button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(46, 125, 50, 0.3);
+}
+
+.auth-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-container button:disabled::before {
+  display: none;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.auth-footer p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.auth-footer a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-footer a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+}
+
+.auth-footer a:focus {
+  outline: 2px solid #2e7d32;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.auth-container button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.auth-container button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-group.error input {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.form-group.success input {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.password-strength {
+  margin-top: 5px;
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 2px;
+}
+
+.password-strength-weak {
+  width: 33%;
+  background-color: #f44336;
+}
+
+.password-strength-medium {
+  width: 66%;
+  background-color: #ff9800;
+}
+
+.password-strength-strong {
+  width: 100%;
+  background-color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 90%;
+  }
+  
+  .auth-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .form-group input {
+    padding: 14px;
+    font-size: 16px; 
+  }
+  
+  .auth-container button {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .auth-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .auth-header p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .auth-container {
+    border: 2px solid #000;
+  }
+  
+  .form-group input {
+    border: 2px solid #000;
+  }
+  
+  .auth-container button {
+    border: 2px solid #000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-container {
+    animation: none;
+  }
+  
+  .form-group input,
+  .auth-container button,
+  .auth-footer a {
+    transition: none;
+  }
+  
+  .auth-container button::before {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .auth-container {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .auth-header h2 {
+    color: #4caf50;
+  }
+  
+  .auth-header p {
+    color: #bbb;
+  }
+  
+  .form-group input {
+    background-color: #2a2a2a;
+    border-color: #555;
+    color: #ffffff;
+  }
+  
+  .form-group input::placeholder {
+    color: #888;
+  }
+  
+  .auth-footer {
+    border-top-color: #555;
+  }
+  
+  .auth-footer p {
+    color: #bbb;
+  }
+}
