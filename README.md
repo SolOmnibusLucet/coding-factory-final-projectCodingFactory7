@@ -1,7 +1,7 @@
-# Simplified - Task Management Application
+# Simplified - To Do List Application
 ## Coding Factory 7 - Final Project
 
-A full-stack task management application built with React and Node.js, featuring user authentication, task organization, and a clean, intuitive interface.
+A full-stack to do list application built with React and Node.js, featuring user authentication, task organization, and a clean, intuitive interface.
 
 ## 📋 Project Overview
 
