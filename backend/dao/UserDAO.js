@@ -5,7 +5,7 @@ export const createUser = async (data) => {
 };
 
 export const findUserByEmail = async (email) => {
-  return User.findOne({ email });
+  return User.findOne({ email: { $eq: email } });
 };
 
 export const findUserById = async (id) => {
